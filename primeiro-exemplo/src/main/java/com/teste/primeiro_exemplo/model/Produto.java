@@ -1,6 +1,6 @@
 package com.teste.primeiro_exemplo.model;
 
-public class ProdutoModel {
+public class Produto {
 
   // #region atributos
   private Integer id;
