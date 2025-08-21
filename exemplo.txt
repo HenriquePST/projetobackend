@@ -2,8 +2,11 @@ objetivo:
 
 criar um api restfull para controle de produtos 
 
-Modelo:
+Modelo: ok 
     produto : id, nome , quantidade, valor, observacao 
 
-Repository de prod:
+Repository de prod: ok
     obterTodos, obterID, cadastrar, atualizar, deletar; 
+
+Controller de prod :
+    obterTodos, obterID, cadastrar, atualizar, deletar;
