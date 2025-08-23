@@ -3,7 +3,6 @@ package com.teste.primeiro_exemplo.repository;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Repository;
-
 import com.teste.primeiro_exemplo.model.Produto;
 
 @Repository
@@ -17,6 +16,7 @@ public class ProdutoRepository {
    * 
    * @return lista de produtos
    */
+
   public List<Produto> obterTodos() {
     return produtos;
   }
@@ -42,15 +42,17 @@ public class ProdutoRepository {
    * @return retorna o produto adicionado com o id atualizado
    */
   public Produto adicionar(Produto produto) {
+    
     ultimoId++;
+    
     produto.setId(ultimoId);
     produtos.add(produto);
+    
     return produto;
   }
 
   /**
    * metodo que deleta um produto pelo id
-   * 
    * @param id do produto que será deletado
    */
 
@@ -69,12 +71,10 @@ public class ProdutoRepository {
     // eu tenho que remover o produto antigo e adicionar o novo
 
     Produto produtoExistente = obterPorId(produto.getId());
-
-
     // se o produto existir, eu removo ele da lista
- if (produtoExistente == null) {
-    throw new RuntimeException("Produto não encontrado");
-}
+    if (produtoExistente == null) {
+      throw new RuntimeException("Produto não encontrado");
+    }
 
     // removo o produto antigo
     deletar(produto.getId());
@@ -82,4 +82,5 @@ public class ProdutoRepository {
     produtos.add(produto);
     return produto;
   }
+
 }
